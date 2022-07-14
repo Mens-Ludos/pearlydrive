@@ -11,8 +11,8 @@
     "build": "nx run-many --target=build --all",
     "build-storybook": "nx run-many --target=build-storybook --all",
     "lint": "nx run-many --target=lint --all",
-    "format": "nx format",
-    "format:check": "nx format:check",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
     "test": "nx run-many --target=test --all",
     "e2e": "nx run-many --target=e2e --all"
   },

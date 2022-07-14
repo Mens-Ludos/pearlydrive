@@ -74,7 +74,7 @@ jobs:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - uses: EndBug/add-and-commit@v9.0.1
         with:
-          default_actor: user-info
+          default_author: user-info
           add: './firebase'
           push: true
           message: 'chore: firebase hashes'
