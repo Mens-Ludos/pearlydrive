@@ -1,0 +1,87 @@
+name: CD
+
+on:
+  push:
+    branches:
+      - dev
+  workflow_dispatch: {}
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - uses: actions/cache@v3
+        id: cache
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn-
+      - name: Install project dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: yarn
+      - name: Build apps
+        run: yarn build
+      - name: Export apps
+        run: yarn export
+      - name: Build storybooks
+        run: yarn build-storybook
+      - uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: ./dist
+
+  Deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{secrets.GH_ACCESS_TOKEN}}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - uses: actions/download-artifact@v3
+        with:
+          name: dist
+          path: ./dist
+      - uses: w9jds/firebase-action@master
+        name: Deploy Landing
+        with:
+          args: deploy --only hosting:pearlydrive-landing-dev
+        env:
+          PROJECT_PATH: ./
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - uses: w9jds/firebase-action@master
+        name: Deploy Core UI Storybook
+        with:
+          args: deploy --only hosting:pearlydrive-storybook-core-ui
+        env:
+          PROJECT_PATH: ./
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - uses: w9jds/firebase-action@master
+        name: Deploy Landing UI Storybook
+        with:
+          args: deploy --only hosting:pearlydrive-storybook-landing-ui
+        env:
+          PROJECT_PATH: ./
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - uses: w9jds/firebase-action@master
+        name: Deploy contract coverage
+        with:
+          args: deploy --only hosting:carpaper-coverage
+        env:
+          PROJECT_PATH: ./
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - uses: EndBug/add-and-commit@v9.0.1
+        with:
+          default_actor: user-info
+          add: './firebase'
+          push: true
+          message: 'chore: firebase hashes'

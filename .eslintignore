@@ -1,0 +1,4 @@
+# Add files here to ignore them from eslint
+
+/node_modules
+/dist

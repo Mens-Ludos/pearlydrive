@@ -1,7 +1,9 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx"],
+  "plugins": ["@nrwl/nx", "import"],
+  "extends": ["plugin:import/typescript"],
+  "parser": "@typescript-eslint/parser",
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -17,6 +19,25 @@
                 "onlyDependOnLibsWithTags": ["*"]
               }
             ]
+          }
+        ],
+        "import/order": [
+          "error",
+          {
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            },
+            "groups": [
+              "external",
+              "builtin",
+              "index",
+              "sibling",
+              "parent",
+              "internal",
+              "object"
+            ],
+            "newlines-between": "always"
           }
         ]
       }

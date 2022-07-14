@@ -1,0 +1,20 @@
+{
+  "projects": {
+    "default": "pearly-drive"
+  },
+  "targets": {
+    "pearly-drive": {
+      "hosting": {
+        "pearlydrive-landing-dev": [
+          "pearlydrive-landing-dev"
+        ],
+        "pearlydrive-storybook-core-ui": [
+          "pearlydrive-storybook-core-ui"
+        ],
+        "pearlydrive-storybook-landing-ui": [
+          "pearlydrive-storybook-landing-ui"
+        ]
+      }
+    }
+  }
+}
