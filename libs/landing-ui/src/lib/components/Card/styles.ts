@@ -1,6 +1,4 @@
-import { css } from '@emotion/react';
-
-import type { CardProps } from './types';
+import type { CardProps } from './Card.props';
 
 import type { Styled } from '../../theme';
 

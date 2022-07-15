@@ -7,7 +7,11 @@ export default {
   component: CardC,
 };
 
-export const CardWhite: React.FC = () => <CardC height={200}>White</CardC>;
+export const CardWhite: React.FC = () => (
+  <CardC appearance="white" height={200}>
+    White
+  </CardC>
+);
 export const CardPurple: React.FC = () => (
   <CardC appearance="purple" height={200}>
     Purple
