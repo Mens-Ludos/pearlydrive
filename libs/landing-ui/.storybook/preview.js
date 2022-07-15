@@ -31,10 +31,10 @@ export const parameters = {
   },
 };
 
-addDecorator((story) => (
+addDecorator((Story) => (
   <Box>
     <ResetCSS />
-    {story()}
+    <Story />
   </Box>
 ));
 

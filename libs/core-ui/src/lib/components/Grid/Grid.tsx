@@ -5,11 +5,9 @@ import type { GridProps } from './types';
 
 import { Box } from '../Box';
 
-export const Grid = styled(Box)<GridProps>`
-  display: grid;
-  ${({ gridGaps }) => gridGaps && `grid-grap: ${gridGaps};`}
-  ${({ gridRowGaps }) => gridRowGaps && `row-gap: ${gridRowGaps};`}
-  ${({ gridColumnGaps }) => gridColumnGaps && `column-gap: ${gridColumnGaps};`}
-  ${flexbox}
-  ${grid}
-`;
+export const Grid = styled(Box)<GridProps>(flexbox, grid, (props) => ({
+  display: 'grid',
+  gridGap: props.gridGaps || '',
+  rowGap: props.gridRowGaps || '',
+  columnGap: props.gridColumnGaps || '',
+}));

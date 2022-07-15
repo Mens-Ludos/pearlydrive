@@ -5,8 +5,6 @@ import type { FlexProps } from './types';
 
 import { Box } from '../Box';
 
-export const Flex = styled(Box)<FlexProps>`
-  display: flex;
-  ${flexbox};
-  ${({ gap }) => gap && `gap: ${gap}`};
-`;
+export const Flex = styled(Box)<FlexProps>(flexbox, (props) => ({
+  gap: props.gap || '',
+}));

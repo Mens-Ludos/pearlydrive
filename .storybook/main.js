@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   stories: [],
   addons: [
@@ -15,11 +17,14 @@ module.exports = {
       },
     },
   },
-  // uncomment the property below if you want to apply some webpack config globally
-  // webpackFinal: async (config, { configType }) => {
-  //   // Make whatever fine-grained changes you need that should apply to all storybook configs
-
-  //   // Return the altered config
-  //   return config;
-  // },
+  webpackFinal: async (config, { configType }) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@emotion/core': path.resolve('node_modules/@emotion/react'),
+      'emotion-theming': path.resolve('node_modules/@emotion/react'),
+      '@emotion/styled': path.resolve('node_modules/@emotion/styled'),
+      '@emotion/react': path.resolve('node_modules/@emotion/react'),
+    };
+    return config;
+  },
 };

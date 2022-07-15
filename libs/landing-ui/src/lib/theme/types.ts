@@ -1,5 +1,6 @@
+import { Theme } from '@emotion/react';
 import type { BaseTheme } from '@pearlydrive/core-ui';
-import type { ReactNode } from 'react';
+import type { PropsWithChildren } from 'react';
 
 import '@emotion/react';
 
@@ -8,6 +9,7 @@ export type Colors = {
     white: string;
     black: string;
     purple: string;
+    purpleLight: string;
     gray: string;
   };
 };
@@ -20,6 +22,8 @@ declare module '@emotion/react' {
   export interface Theme extends LandingTheme {}
 }
 
-export type LandingThemeProviderProps = {
-  children: ReactNode;
+export interface LandingThemeProviderProps extends PropsWithChildren {}
+
+export type Styled<T> = T & {
+  theme: Theme;
 };

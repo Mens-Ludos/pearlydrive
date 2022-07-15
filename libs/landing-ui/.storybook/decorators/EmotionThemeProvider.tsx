@@ -1,7 +1,9 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 import { LandingThemeProvider } from '../../src';
 
-export const EmotionThemeProvider = (storyFn: () => ReactNode) => (
-  <LandingThemeProvider>{storyFn()}</LandingThemeProvider>
+export const EmotionThemeProvider = (Story: React.FC) => (
+  <LandingThemeProvider>
+    <Story />
+  </LandingThemeProvider>
 );
