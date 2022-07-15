@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { flexbox } from 'styled-system';
 
-import type { FlexProps } from './types';
+import type { FlexProps } from './Flex.props';
 
 import { Box } from '../Box';
 

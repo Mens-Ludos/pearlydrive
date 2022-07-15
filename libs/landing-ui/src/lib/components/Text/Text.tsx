@@ -3,7 +3,7 @@ import React from 'react';
 import { layout, space, typography } from 'styled-system';
 
 import { getColor, getFontSize } from './funcs';
-import type { TextProps } from './types';
+import type { TextProps } from './Text.props';
 
 export const Text = styled.div<TextProps>`
   color: ${getColor};

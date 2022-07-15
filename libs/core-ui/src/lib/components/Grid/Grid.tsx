@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { flexbox, grid } from 'styled-system';
 
-import type { GridProps } from './types';
+import type { GridProps } from './Grid.props';
 
 import { Box } from '../Box';
 
