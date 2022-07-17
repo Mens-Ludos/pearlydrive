@@ -56,5 +56,5 @@ export const FeatureCard = memo<FeatureCardProps>(
         </Flex>
       </Card>
     );
-  }
+  },
 );

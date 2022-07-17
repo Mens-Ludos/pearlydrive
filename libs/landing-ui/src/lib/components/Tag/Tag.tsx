@@ -25,7 +25,7 @@ export const Tag = styled(
         {children}
       </Text>
     </Flex>
-  )
+  ),
 )<TagProps>(({ theme }) => ({
   textTransform: 'uppercase',
   borderRadius: '7px',

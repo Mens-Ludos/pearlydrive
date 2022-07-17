@@ -19,3 +19,14 @@ export const Founder: React.FC = () => (
     Links
   </PersonCard>
 );
+
+export const Person: React.FC = () => (
+  <PersonCard
+    appearance="person"
+    name="Scarlet"
+    tag="ui designer"
+    imageSrc={FounderIcon}
+  >
+    Links
+  </PersonCard>
+);
