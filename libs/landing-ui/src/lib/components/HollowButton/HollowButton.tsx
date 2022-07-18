@@ -89,5 +89,5 @@ export const HollowButton = memo<HollowButtonProps>(
         </GradientOuterBox>
       </Box>
     );
-  }
+  },
 );
