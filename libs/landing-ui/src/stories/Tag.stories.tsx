@@ -1,4 +1,3 @@
-import { Box } from '@pearlydrive/core-ui';
 import React from 'react';
 
 import { Tag } from '../lib';
