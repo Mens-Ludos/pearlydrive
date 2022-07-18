@@ -3,9 +3,9 @@ import React from 'react';
 import { layout, space, typography } from 'styled-system';
 
 import { getColor, getFontSize } from './funcs';
-import type { TextProps } from './types';
+import type { TextProps } from './Text.props';
 
-export const Text = styled.div<TextProps>`
+export const Text = styled.span<TextProps>`
   color: ${getColor};
   font-size: ${getFontSize};
   line-height: ${({ lineHeight }) =>

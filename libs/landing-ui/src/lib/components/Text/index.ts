@@ -1,3 +1,3 @@
 export * from './Text';
 export * from './funcs';
-export * from './types';
+export * from './Text.props';
