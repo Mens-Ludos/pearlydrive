@@ -5,6 +5,19 @@ import { EmotionThemeProvider } from './decorators/EmotionThemeProvider';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
+  backgrounds: {
+    default: 'dark',
+    values: [
+      {
+        name: 'light',
+        value: '#FFFFFF',
+      },
+      {
+        name: 'dark',
+        value: '#333333',
+      },
+    ],
+  },
   viewport: {
     viewports: {
       L: {
@@ -31,10 +44,10 @@ export const parameters = {
   },
 };
 
-addDecorator((story) => (
+addDecorator((Story) => (
   <Box>
     <ResetCSS />
-    {story()}
+    <Story />
   </Box>
 ));
 
