@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
 import { Box } from '@pearlydrive/core-ui';
+import { FC } from 'react';
 
 import { ProgressBarProps } from './ProgressBar.props';
 
-export const ProgressBar = styled(Box)<ProgressBarProps>(
+const ProgressBarInner = styled(Box)<ProgressBarProps>(
   {
     height: '32px',
     background: `linear-gradient(267.43deg, #CE89FF 0%, #A12AFF 100%)`,
@@ -23,4 +24,10 @@ export const ProgressBar = styled(Box)<ProgressBarProps>(
   ({ max, value }) => ({
     width: `calc((100% / ${max || 100}) * ${value || 1})`,
   }),
+);
+
+export const ProgressBar: FC<ProgressBarProps> = ({ value, max, ...props }) => (
+  <Box width="100%" {...props}>
+    <ProgressBarInner value={value} max={max} />
+  </Box>
 );
