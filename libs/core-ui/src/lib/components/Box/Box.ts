@@ -8,5 +8,5 @@ export const Box = styled.div<BoxProps>(
   border,
   layout,
   position,
-  space
+  space,
 );
