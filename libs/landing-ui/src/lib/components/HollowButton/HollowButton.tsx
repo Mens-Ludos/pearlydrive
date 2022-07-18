@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
-import { Box, FlexProps, Flex } from '@pearlydrive/core-ui';
+import { FlexProps, Flex } from '@pearlydrive/core-ui';
 import { memo } from 'react';
 
 import type { HollowButtonProps } from './HollowButton.props';
 
-import { Text, TextProps } from '../Text';
+import { Text } from '../Text';
 
 const GradientOuterBox = styled(Flex)<FlexProps>(({ theme }) => {
   const indent = '1px';
@@ -50,7 +50,6 @@ const GradientOuterBox = styled(Flex)<FlexProps>(({ theme }) => {
   };
 });
 
-// TODO: implement real hollow effect
 const HollowBox = styled(Flex)<FlexProps>(({ theme }) => {
   return {
     background: '#240035',
@@ -63,31 +62,43 @@ const HollowBox = styled(Flex)<FlexProps>(({ theme }) => {
   };
 });
 
-const ButtonText = styled(Text)<TextProps>(({ theme }) => {
-  return {
-    color: theme.colors.primary.white,
-  };
-});
-
 export const HollowButton = memo<HollowButtonProps>(
-  ({ title, capital = true, background, ...props }) => {
+  ({
+    title,
+    capital = true,
+    width = '266px',
+    height = '96px',
+    background,
+    ...props
+  }) => {
     return (
-      <Box padding={'5px'}>
+      <button
+        style={{
+          padding: '5px',
+          background: 'none',
+          border: '0px',
+        }}
+      >
         <GradientOuterBox
-          width={props.width ?? '266px'}
-          height={props.height ?? '96px'}
+          width={width}
+          height={height}
           display={'flex'}
           alignItems={'center'}
           justifyContent={'center'}
           {...props}
         >
           <HollowBox>
-            <ButtonText size="xl" fontWeight={'700'}>
-              {capital ? title.toUpperCase() : title}
-            </ButtonText>
+            <Text
+              size="xl"
+              fontWeight={'700'}
+              color="primary.white"
+              textTransform={capital ? 'capitalize' : undefined}
+            >
+              {title}
+            </Text>
           </HollowBox>
         </GradientOuterBox>
-      </Box>
+      </button>
     );
   },
 );
