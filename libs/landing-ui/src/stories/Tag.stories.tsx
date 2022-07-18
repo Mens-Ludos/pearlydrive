@@ -1,4 +1,3 @@
-import { Box } from '@pearlydrive/core-ui';
 import React from 'react';
 
 import { Tag } from '../lib';
@@ -17,6 +16,8 @@ export const Person: React.FC = () => (
   <Tag
     background="rgba(255, 255, 255, 0.2)"
     height="25px"
+    fontSize="12px"
+    lineHeight="15px"
     style={{
       backdropFilter: 'blur(10px)',
       WebkitBackdropFilter: 'blur(10px)',
