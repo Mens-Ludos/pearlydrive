@@ -16,7 +16,10 @@ const GradientOuterBox = styled(Flex)<FlexProps>(({ theme }) => {
     borderImageSlice: '1',
     borderRadius: '9px',
     background: gradient,
+    userSelect: 'none',
     ":after": {
+      transition: 'opacity 0.3s ease-out;',
+      opacity: '0',
       position: 'absolute',
       top: `-${indent}`,
       bottom: `-${indent}`,
@@ -27,8 +30,24 @@ const GradientOuterBox = styled(Flex)<FlexProps>(({ theme }) => {
       zIndex: '-1',
       borderRadius: '9px',
       filter: 'blur(0.25rem)',
-      opacity: '1'
-    }
+    },
+    ":hover": {
+      cursor: 'pointer',
+      ":after": {
+        position: 'absolute',
+        top: `-${indent}`,
+        bottom: `-${indent}`,
+        left: `-${indent}`,
+        right: `-${indent}`,
+        background: gradient,
+        content: '""',
+        zIndex: '-1',
+        borderRadius: '9px',
+        filter: 'blur(0.25rem)',
+        opacity: '1',
+
+      }
+    },
   })
 })
 
@@ -40,8 +59,8 @@ const HollowBox = styled(Flex)<FlexProps>(({ theme }) => {
     height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    // padding: '50px',
-    boxSizing: 'border-box'
+    boxShadow: 'inset 0px 0px 10px 2px rgba(0,0,0,0.6)',
+    boxSizing: 'border-box',
   })
 })
 
@@ -58,10 +77,8 @@ export const HollowButton = memo<HollowButtonProps>(
       <Box
         padding={'5px'}>
         <GradientOuterBox
-          width={props.width ?? '250px'}
-          height={props.height ?? '80px'}
-          // minWidth={'250px'}
-          // minHeight={'80px'}
+          width={props.width ?? '266px'}
+          height={props.height ?? '96px'}
           display={'flex'}
           alignItems={'center'}
           justifyContent={'center'}

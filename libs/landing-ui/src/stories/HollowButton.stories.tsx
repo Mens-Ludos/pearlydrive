@@ -17,3 +17,11 @@ export const ButtonCapitalDisabled: React.FC = () => (
 export const CustomSizes: React.FC = () => (
   <HollowButton title='Drive on' width={'300px'} height={'200px '} ></HollowButton >
 );
+
+
+export const OnClickCallback: React.FC = () => (
+  <HollowButton title='Drive on' onClick={() => {
+    alert('Button onClick!')
+  }}></HollowButton >
+);
+
