@@ -1,2 +1,2 @@
-export * from "./CollapseCard";
-export * from "./Collapsecard.props";
+export * from './CollapseCard';
+export * from './Collapsecard.props';
