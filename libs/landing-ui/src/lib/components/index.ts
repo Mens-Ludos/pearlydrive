@@ -6,3 +6,4 @@ export * from './HollowButton';
 export * from './PersonCard';
 export * from './ProgressBar';
 export * from './SupplyCard';
+export * from './RoadMapCard';
