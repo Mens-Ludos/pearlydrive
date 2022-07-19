@@ -8,7 +8,7 @@ export default {
   component: CardC,
 };
 
-export const CardWhite: React.FC = () => (
+export const CardWithContent: React.FC = () => (
   <Box background={'white'} padding={'40px'}>
     <CollapseCard title="In ut congue tellus, accumsan pulvinar massa?">
       <Text fontSize="26px" lineHeight={'30px'}>
@@ -19,5 +19,19 @@ export const CardWhite: React.FC = () => (
         enim non, faucibus arcu.
       </Text>
     </CollapseCard>
+  </Box>
+);
+
+export const CardEmpty: React.FC = () => (
+  <Box background={'white'} padding={'40px'}>
+    <CollapseCard title="In ut congue tellus, accumsan pulvinar massa?"></CollapseCard>
+  </Box>
+);
+
+export const CardWithLongTitle: React.FC = () => (
+  <Box background={'white'} padding={'40px'}>
+    <CollapseCard
+      title={`In ut congue tellus, accumsan pulvinar massa?`.repeat(3)}
+    ></CollapseCard>
   </Box>
 );
