@@ -7,27 +7,24 @@ export default {
   component: HollowButton,
 };
 
-export const ButtonDefault: React.FC = () => (
-  <HollowButton title="Text"></HollowButton>
-);
+export const ButtonDefault: React.FC = () => <HollowButton>Text</HollowButton>;
 
 export const ButtonCapitalDisabled: React.FC = () => (
-  <HollowButton title="Text" capital={false}></HollowButton>
+  <HollowButton uppercase={false}>Text</HollowButton>
 );
 
 export const CustomSizes: React.FC = () => (
-  <HollowButton
-    title="Drive on"
-    width={'300px'}
-    height={'200px '}
-  ></HollowButton>
+  <HollowButton width={'300px'} height={'200px '}>
+    Drive on
+  </HollowButton>
 );
 
 export const OnClickCallback: React.FC = () => (
   <HollowButton
-    title="Drive on"
     onClick={() => {
       alert('Button onClick!');
     }}
-  ></HollowButton>
+  >
+    Drive on
+  </HollowButton>
 );

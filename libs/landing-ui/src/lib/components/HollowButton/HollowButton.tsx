@@ -64,11 +64,11 @@ const HollowBox = styled(Flex)<FlexProps>(({ theme }) => {
 
 export const HollowButton = memo<HollowButtonProps>(
   ({
-    title,
-    capital = true,
+    uppercase = true,
     width = '266px',
     height = '96px',
     background,
+    children,
     ...props
   }) => {
     return (
@@ -92,9 +92,9 @@ export const HollowButton = memo<HollowButtonProps>(
               size="xl"
               fontWeight={'700'}
               color="primary.white"
-              textTransform={capital ? 'capitalize' : undefined}
+              textTransform={uppercase ? 'uppercase' : undefined}
             >
-              {title}
+              {children}
             </Text>
           </HollowBox>
         </GradientOuterBox>
