@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { AppProps } from 'next/app';
+import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import './styles.css';
 

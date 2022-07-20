@@ -1,4 +1,4 @@
-import { Theme } from '@emotion/react';
+import type { Theme } from '@emotion/react';
 import type { BaseTheme } from '@pearlydrive/core-ui';
 import type { PropsWithChildren } from 'react';
 

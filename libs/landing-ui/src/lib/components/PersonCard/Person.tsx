@@ -1,6 +1,7 @@
 import { useTheme } from '@emotion/react';
 import { Flex } from '@pearlydrive/core-ui';
-import React, { FC } from 'react';
+import type { FC } from 'react';
+import React from 'react';
 
 import { Image } from './Image';
 import type { PersonCardProps } from './PersonCard.props';

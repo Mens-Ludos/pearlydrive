@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 
-import { SupplyCard, SupplyItemProps } from '../lib';
+import type { SupplyItemProps } from '../lib';
+import { SupplyCard } from '../lib';
 
 export default {
   title: 'Landing UI/Components/Supply Card',
