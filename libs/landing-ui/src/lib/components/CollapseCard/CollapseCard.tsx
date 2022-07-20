@@ -25,82 +25,83 @@ export const CollapseCard = memo<CollapseCardProps>(
           borderBottomLeftRadius={isOpened ? '0px' : undefined}
           borderBottomRightRadius={isOpened ? '0px' : undefined}
           appearance="white"
-          position={'relative'}
-          zIndex={'1'}
+          position="relative"
+          zIndex="1"
           paddingX={padding}
-          paddingY={'34px'}
+          paddingY="34px"
           onClick={() => {
             setIsOpened(!isOpened);
           }}
           style={{
             background: 'white !important',
             userSelect: 'none',
-            transition: `border-radius ${animationTime}`,
+            transition: `border-radius ${animationTime} ease-in-out`,
           }}
           {...props}
         >
-          <Flex alignItems={'center'} justifyContent={'space-between'}>
-            <Text fontSize="32px" fontWeight={'700'}>
+          <Flex alignItems="center" justifyContent="space-between">
+            <Text fontSize="32px" fontWeight="700">
               {title}
             </Text>
             <Box
               width={crossWidth}
               height={crossWidth}
-              position={'relative'}
+              position="relative"
               marginLeft={padding}
             >
               <Box
                 width={crossWidth}
                 height={crossHeight}
-                background={'black'}
+                background="black"
                 style={{
                   opacity: isOpened ? '0' : '1',
-                  transition: `opacity ${animationTime}`,
+                  transition: `opacity ${animationTime} ease-in-out`,
                   textAlign: 'center',
                 }}
-                margin={'auto'}
-                left={'0'}
-                right={'0'}
-                top={'0'}
-                bottom={'0'}
-                position={'absolute'}
+                margin="auto"
+                left="0"
+                right="0"
+                top="0"
+                bottom="0"
+                position="absolute"
               ></Box>
               <Box
                 width={crossWidth}
                 height={crossHeight}
-                background={'black'}
+                background="black"
                 style={{
                   transform: `rotate(${isOpened ? '0deg' : '90deg'})`,
                   transformOrigin: 'center',
-                  transition: `transform ${animationTime}`,
+                  transition: `transform ${animationTime} ease-in-out`,
                   textAlign: 'center',
                 }}
-                margin={'auto'}
-                left={'0'}
-                right={'0'}
-                top={'0'}
-                bottom={'0'}
-                position={'absolute'}
+                margin="auto"
+                left="0"
+                right="0"
+                top="0"
+                bottom="0"
+                position="absolute"
               ></Box>
             </Box>
           </Flex>
         </Card>
         <Card
           borderRadius={borderRadius}
-          borderTopLeftRadius={'0px'}
-          borderTopRightRadius={'0px'}
+          borderTopLeftRadius="0px"
+          borderTopRightRadius="0px"
           paddingY={isOpened ? padding : '0'}
           paddingX={padding}
           minHeight={isOpened ? '342px' : '0'}
           height={isOpened ? undefined : '0'}
-          overflow={'hidden'}
-          appearance={'white'}
+          overflow="hidden"
+          appearance="white"
           style={{
             transition: `
                                 display ${animationTime}, 
                                 min-height ${animationTime}, 
                                 padding ${animationTime}, 
-                                height ${animationTime}`,
+                                height ${animationTime}
+                                ease-in-out`,
           }}
         >
           <Box>{children}</Box>
