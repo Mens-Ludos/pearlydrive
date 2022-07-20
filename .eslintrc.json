@@ -39,7 +39,8 @@
             ],
             "newlines-between": "always"
           }
-        ]
+        ],
+        "@typescript-eslint/consistent-type-imports": "warn"
       }
     },
     {

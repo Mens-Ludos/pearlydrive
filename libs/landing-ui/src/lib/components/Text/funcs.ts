@@ -1,6 +1,7 @@
 import { getThemeValue } from '@pearlydrive/core-ui';
 
-import { sizes, TextProps, ThemedTextProps } from './Text.props';
+import type { TextProps, ThemedTextProps } from './Text.props';
+import { sizes } from './Text.props';
 
 export const getColor = ({ theme, color }: ThemedTextProps) => {
   return getThemeValue(theme)(`colors.${color}`, color);

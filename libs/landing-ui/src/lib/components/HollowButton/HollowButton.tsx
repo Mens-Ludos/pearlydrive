@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { FlexProps, Flex } from '@pearlydrive/core-ui';
+import type { FlexProps } from '@pearlydrive/core-ui';
+import { Flex } from '@pearlydrive/core-ui';
 import { memo } from 'react';
 
 import type { HollowButtonProps } from './HollowButton.props';

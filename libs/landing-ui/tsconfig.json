@@ -13,8 +13,8 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true
   },
-  "files": [],
-  "include": [],
+  "files": ["svg.d.ts"],
+  "include": ["src"],
   "references": [
     {
       "path": "./tsconfig.lib.json"

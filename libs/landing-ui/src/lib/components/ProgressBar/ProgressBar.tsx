@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { Box } from '@pearlydrive/core-ui';
-import { FC } from 'react';
+import type { FC } from 'react';
 
-import { ProgressBarProps } from './ProgressBar.props';
+import type { ProgressBarProps } from './ProgressBar.props';
 
 const ProgressBarInner = styled(Box)<ProgressBarProps>(
   {

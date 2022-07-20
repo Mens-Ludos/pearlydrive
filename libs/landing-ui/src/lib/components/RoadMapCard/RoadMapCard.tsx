@@ -1,7 +1,7 @@
 import { Box, Flex } from '@pearlydrive/core-ui';
 import { memo } from 'react';
 
-import { RoadMapCardProps } from './RoadMapCard.props';
+import type { RoadMapCardProps } from './RoadMapCard.props';
 
 import { Card } from '../Card';
 import { Text } from '../Text';

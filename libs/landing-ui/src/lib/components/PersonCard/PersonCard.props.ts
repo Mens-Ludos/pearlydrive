@@ -1,4 +1,4 @@
-import { CardProps } from '../Card';
+import type { CardProps } from '../Card';
 
 type PersonCardAppearance = 'founder' | 'person';
 

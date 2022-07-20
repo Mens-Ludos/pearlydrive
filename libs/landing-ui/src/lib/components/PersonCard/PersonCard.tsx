@@ -4,7 +4,8 @@ import { Founder } from './Founder';
 import { Person } from './Person';
 import type { PersonCardProps } from './PersonCard.props';
 
-import { Card, CardAppearance } from '../Card';
+import type { CardAppearance } from '../Card';
+import { Card } from '../Card';
 
 export const PersonCard = forwardRef<HTMLDivElement, PersonCardProps>(
   (
