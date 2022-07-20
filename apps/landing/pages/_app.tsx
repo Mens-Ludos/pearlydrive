@@ -1,3 +1,4 @@
+import { LandingThemeProvider } from '@pearlydrive/landing-ui';
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
@@ -17,7 +18,9 @@ const LandingApp: NextPage<AppProps> = ({ Component, pageProps }) => {
         />
       </Head>
       <main className="app">
-        <Component {...pageProps} />
+        <LandingThemeProvider>
+          <Component {...pageProps} />
+        </LandingThemeProvider>
       </main>
     </>
   );
