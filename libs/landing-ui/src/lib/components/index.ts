@@ -4,6 +4,7 @@ export * from './FeatureCard';
 export * from './Tag';
 export * from './HollowButton';
 export * from './PersonCard';
+export * from './CollapseCard';
 export * from './ProgressBar';
 export * from './SupplyCard';
 export * from './RoadMapCard';

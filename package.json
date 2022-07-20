@@ -14,7 +14,8 @@
     "format": "prettier . --write",
     "format:check": "prettier . --check",
     "test": "nx run-many --target=test --all",
-    "e2e": "nx run-many --target=e2e --all"
+    "e2e": "nx run-many --target=e2e --all",
+    "run:landing-ui": "nx storybook landing-ui"
   },
   "config": {
     "commitizen": {
