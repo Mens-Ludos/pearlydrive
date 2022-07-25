@@ -19,7 +19,7 @@ export const CollapseCard = memo<CollapseCardProps>(
     const borderRadius = '25px';
 
     return (
-      <Box>
+      <Box {...props}>
         <Card
           borderRadius={borderRadius}
           borderBottomLeftRadius={isOpened ? '0px' : undefined}
@@ -37,7 +37,6 @@ export const CollapseCard = memo<CollapseCardProps>(
             userSelect: 'none',
             transition: `border-radius ${animationTime} ease-in-out`,
           }}
-          {...props}
         >
           <Flex alignItems="center" justifyContent="space-between">
             <Text fontSize="32px" fontWeight="700">
