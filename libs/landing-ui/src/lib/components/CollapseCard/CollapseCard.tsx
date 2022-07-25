@@ -37,7 +37,6 @@ export const CollapseCard = memo<CollapseCardProps>(
             userSelect: 'none',
             transition: `border-radius ${animationTime} ease-in-out`,
           }}
-
         >
           <Flex alignItems="center" justifyContent="space-between">
             <Text fontSize="32px" fontWeight="700">
