@@ -5,7 +5,7 @@ export const FaqSection: React.FC = () => {
   const cardMarginBottom = '65px';
   return (
     <Box pt="146px" px="150px" pb="20px">
-      <Flex flexDirection="column" pb="100px">
+      <Flex flexDirection="column" pb="100px" style={{ userSelect: 'none' }}>
         <Text
           color="primary.purple"
           fontFamily="Ubuntu"
