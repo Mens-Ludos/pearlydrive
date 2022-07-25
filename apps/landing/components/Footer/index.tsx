@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import { Box, Flex } from "@pearlydrive/core-ui";
 import { icon, Text } from "@pearlydrive/landing-ui";
 
@@ -18,6 +19,10 @@ import React from "react";
 // const DiscordIconComponent = icon(TwitterIcon);
 // const TelegramIconComponent = icon(TwitterIcon);
 
+const LinkText = styled(Text)(() => ({
+    cursor: 'pointer'
+}))
+
 export const Footer: React.FC = () => {
     return (
         <Box
@@ -31,6 +36,7 @@ export const Footer: React.FC = () => {
             }}
         >
             <Flex justifyContent='space-between' flexDirection='row' alignItems='center'>
+                {/* todo: replace with logo */}
                 <Box background='grey' width='50px' height='50px'></Box>
                 <Flex width='200px' justifyContent='space-between' alignItems='center' flexDirection='row'>
                     {/* todo: replace with icons */}
@@ -38,24 +44,21 @@ export const Footer: React.FC = () => {
                     <Box background='grey' width='24px' height='24px'></Box>
                     <Box background='grey' width='24px' height='24px'></Box>
                     <Box background='grey' width='24px' height='24px'></Box>
-                    {/* <TwitterIcon></TwitterIcon> */}
-                    {/*<DiscordIconComponent></DiscordIconComponent>
-                    <TelegramIconComponent></TelegramIconComponent> */}
                 </Flex>
                 <Flex height='100%' width='216px' flexDirection='column' alignContent='space-between'>
                     <Text fontFamily='Montserrat' fontWeight='700' fontSize='20px' color="primary.purple">Need help?</Text>
                     <Flex flexDirection='row' justifyContent='space-between'>
-                        <Text fontFamily='Inter' fontWeight='700' fontSize='20px' color="white">FAQ's</Text>
-                        <Text fontFamily='Inter' fontWeight='700' fontSize='20px' color="white">Contact Us</Text>
+                        <LinkText fontFamily='Inter' fontWeight='700' fontSize='20px' color="white">FAQ's</LinkText>
+                        <LinkText fontFamily='Inter' fontWeight='700' fontSize='20px' color="white">Contact Us</LinkText>
                     </Flex>
                 </Flex>
                 <Flex height='100%' width='500px' flexDirection='column' alignContent='space-between'>
                     <Text fontFamily='Montserrat' fontWeight='700' fontSize='20px' color="primary.purple">General</Text>
                     <Flex flexDirection='row' justifyContent='space-between'>
-                        <Text fontFamily='Inter' fontWeight='700' fontSize='20px' color="white">IDO</Text>
-                        <Text fontFamily='Inter' fontWeight='700' fontSize='20px' color="white">Roadmap</Text>
-                        <Text fontFamily='Inter' fontWeight='700' fontSize='20px' color="white">Economic</Text>
-                        <Text fontFamily='Inter' fontWeight='700' fontSize='20px' color="white">Advantages</Text>
+                        <LinkText fontFamily='Inter' fontWeight='700' fontSize='20px' color="white">IDO</LinkText>
+                        <LinkText fontFamily='Inter' fontWeight='700' fontSize='20px' color="white">Roadmap</LinkText>
+                        <LinkText fontFamily='Inter' fontWeight='700' fontSize='20px' color="white">Economic</LinkText>
+                        <LinkText fontFamily='Inter' fontWeight='700' fontSize='20px' color="white">Advantages</LinkText>
                     </Flex>
                 </Flex>
             </Flex>
