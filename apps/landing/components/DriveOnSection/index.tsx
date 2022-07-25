@@ -1,5 +1,6 @@
 import { Box, Flex } from "@pearlydrive/core-ui"
 import { Card, HollowButton, Text } from "@pearlydrive/landing-ui"
+
 import TowerSvg from "../../public/tower.svg";
 
 export const DriveOnSection: React.FC = () => {
@@ -23,10 +24,13 @@ export const DriveOnSection: React.FC = () => {
                             </Text>
                         </Flex>
                         <Flex flexBasis='33%' height='100%' justifyContent='center' alignItems='center'>
-                            <HollowButton>Drive on</HollowButton>
+                            <HollowButton onClick={() => { console.log('DRIVE ON!') }}>Drive on</HollowButton>
                         </Flex>
-                        <Flex flexBasis='33%' height='100%'>
-                            <TowerSvg />
+                        <Flex flexBasis='33%' height='100%' justifyContent='flex-end'>
+                            <TowerSvg style={{
+                                marginRight: '-45px',
+                                marginTop: '90px'
+                            }} />
                         </Flex>
                     </Flex>
                 </Box>
