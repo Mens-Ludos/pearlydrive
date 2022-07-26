@@ -6,6 +6,7 @@ import type { NextPage } from 'next';
 import { Footer, DriveOnSection } from '../components';
 import { FaqSection } from '../components/FaqSection';
 import { FeaturesSection } from '../components/FeaturesSection';
+import { TokenomicsSection } from '../components/TokenomicsSection';
 
 const WhiteBox = styled(Box)((theme) => ({
   background: 'white',
@@ -25,6 +26,7 @@ const Home: NextPage = () => {
           <WhiteBox>
             <FeaturesSection></FeaturesSection>
           </WhiteBox>
+          <TokenomicsSection />
           <WhiteBox>
             <FaqSection />
             <Box>
