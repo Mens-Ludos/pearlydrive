@@ -18,7 +18,9 @@ export const FeatureCard = memo<FeatureCardProps>(
         borderRadius="40px"
         style={{
           boxShadow: '0px 0px 96px -30px rgba(0, 0, 0, 0.25)',
+          boxSizing: 'border-box',
         }}
+        minHeight="520px"
         {...props}
       >
         <Flex
@@ -27,7 +29,12 @@ export const FeatureCard = memo<FeatureCardProps>(
           flexDirection={align === 'left' ? 'row' : 'row-reverse'}
         >
           <Flex flexDirection="column" maxWidth="920px">
-            <Flex gap="100px" alignItems="baseline" mb="85px">
+            <Flex
+              gap="100px"
+              alignItems="baseline"
+              mb="85px"
+              style={{ userSelect: 'none' }}
+            >
               <Text
                 fontFamily="Montserrat"
                 fontWeight={800}
@@ -50,6 +57,9 @@ export const FeatureCard = memo<FeatureCardProps>(
             alignItems="center"
             justifyContent={`${align === 'left' ? 'flex-end' : 'flex-start'}`}
             width="500px"
+            style={{
+              userSelect: 'none',
+            }}
           >
             <Text>Image</Text>
           </Flex>
