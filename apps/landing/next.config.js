@@ -10,6 +10,18 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: false,
   },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: { and: [/\.(js|ts|md)x?$/] },
+      use: [
+        {
+          loader: '@svgr/webpack',
+        },
+      ],
+    });
+    return config;
+  },
 };
 
 module.exports = withNx(nextConfig);
