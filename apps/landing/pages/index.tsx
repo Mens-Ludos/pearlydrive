@@ -3,6 +3,7 @@ import { LandingThemeProvider } from '@pearlydrive/landing-ui';
 import type { NextPage } from 'next';
 
 import { Footer, DriveOnSection } from '../components';
+import { FaqSection } from '../components/FaqSection';
 
 const Home: NextPage = () => {
   return (
@@ -16,6 +17,7 @@ const Home: NextPage = () => {
       >
         <Box>
           <Box background="white" width="100%">
+            <FaqSection />
             <Box>
               <DriveOnSection></DriveOnSection>
             </Box>
