@@ -1,10 +1,26 @@
+import { useTheme } from '@emotion/react';
 import { Box, Flex } from '@pearlydrive/core-ui';
 import { CollapseCard, Text } from '@pearlydrive/landing-ui';
+import { css } from '@emotion/react';
 
 export const FaqSection: React.FC = () => {
   const cardMarginBottom = '65px';
+  const theme = useTheme();
+
   return (
-    <Box pt="146px" px="150px" pb="20px">
+    <Box
+      pt="146px"
+      px={"150px"}
+      pb="20px"
+      css={css({
+        [theme.mediaQueries.md]: {
+          padding: "50px"
+        },
+        [theme.mediaQueries.sm]: {
+          padding: "5px"
+        },
+      })}
+    >
       <Flex flexDirection="column" pb="100px" style={{ userSelect: 'none' }}>
         <Text
           color="primary.purple"
@@ -42,6 +58,6 @@ export const FaqSection: React.FC = () => {
           title="In ut congue tellus, accumsan pulvinar massa?"
         ></CollapseCard>
       </Box>
-    </Box>
+    </Box >
   );
 };

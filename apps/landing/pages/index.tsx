@@ -19,7 +19,6 @@ const Home: NextPage = () => {
       <Box
         background="#120021"
         style={{
-          maxWidth: '1920px',
           margin: 'auto',
         }}
       >
