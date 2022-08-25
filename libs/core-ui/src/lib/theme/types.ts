@@ -19,6 +19,7 @@ export type MediaQueries = {
   lg: string;
   xl: string;
   xxl: string;
+  // xxxxl: string;
 };
 
 export type MediaQueriesAbstract = {

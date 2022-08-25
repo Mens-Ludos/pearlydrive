@@ -1,9 +1,23 @@
+import { css, useTheme } from '@emotion/react';
 import { Box, Flex } from '@pearlydrive/core-ui';
 import { Card, PersonCard, Text } from '@pearlydrive/landing-ui';
 
 export const TeamSection: React.FC = () => {
+  const { mediaQueries } = useTheme();
+
+  const wrapMedia = '@media screen and (max-width: 1800px)'
+
   return (
-    <Box p="25px">
+    <Box
+      p="25px"
+      css={css({
+        [mediaQueries.lg]: {
+          flexDirection: 'column-reverse',
+          paddingLeft: "0px",
+          paddingRight: "0px"
+        },
+      })}
+    >
       <Card borderRadius="98px" overflow="hidden" background="#120021">
         <Box
           width="100%"
@@ -13,9 +27,33 @@ export const TeamSection: React.FC = () => {
           style={{
             boxSizing: 'border-box',
           }}
+
+          css={css({
+            [mediaQueries.md]: {
+              paddingLeft: "15px",
+              paddingRight: "15px"
+            },
+
+          })}
         >
-          <Flex flexDirection="row" alignContent="space-between">
-            <Flex flexWrap="wrap" flex="4" gap="100px">
+          <Flex
+            flexDirection="row"
+            alignContent="space-between"
+            css={css({
+              [wrapMedia]: {
+                flexDirection: 'column-reverse',
+                gap: '30px'
+              },
+
+            })}
+          >
+            <Flex flexWrap="wrap" flex="4" gap="100px"
+              css={css({
+                [wrapMedia]: {
+                  justifyContent: 'center'
+                },
+
+              })}>
               <PersonCard
                 appearance="founder"
                 name="Nickname"
@@ -61,6 +99,7 @@ export const TeamSection: React.FC = () => {
                 fontWeight="800"
                 size="xxxl"
                 color="primary.white"
+                textAlign="center"
                 pb="72px"
               >
                 Our Team
