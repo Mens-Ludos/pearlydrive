@@ -16,6 +16,9 @@ export const FaqSection: React.FC = () => {
         [theme.mediaQueries.md]: {
           padding: "50px"
         },
+        [theme.mediaQueries.lg]: {
+          padding: "20px"
+        },
         [theme.mediaQueries.sm]: {
           padding: "5px"
         },
