@@ -1,8 +1,10 @@
+import { css, useTheme } from '@emotion/react';
 import { Box, Flex } from '@pearlydrive/core-ui';
 import { FeatureCard, SupplyCard, Text } from '@pearlydrive/landing-ui';
 
 export const TokenomicsSection: React.FC = () => {
-  const cardMarginY = '150px';
+  const theme = useTheme();
+
   return (
     <Box
       py="150px"
@@ -20,6 +22,7 @@ export const TokenomicsSection: React.FC = () => {
             fontFamily="Montserrat"
             fontWeight="800"
             size="xxxxl"
+            textAlign='center'
           >
             Big Title
           </Text>
@@ -29,12 +32,21 @@ export const TokenomicsSection: React.FC = () => {
             fontWeight="600"
             size="xxl"
             mt="-35px"
+            textAlign='center'
           >
             Small title
           </Text>
         </Flex>
         <Flex width="100%" flexDirection="column" alignItems="center">
-          <Box pb="15px" height="63px">
+          <Flex pb="15px" height="63px"
+            css={css({
+              [theme.mediaQueries.md]: {
+                flexDirection: 'column',
+                alignItems: 'center',
+                marginBottom: "75px"
+              },
+
+            })}>
             <Text
               fontSize="40px"
               fontWeight="700"
@@ -82,8 +94,16 @@ export const TokenomicsSection: React.FC = () => {
                 1 000 000
               </Text>
             </Box>
-          </Box>
+          </Flex>
           <SupplyCard
+            css={css({
+              [theme.mediaQueries.md]: {
+                padding: "40px"
+              },
+              [theme.mediaQueries.sm]: {
+                padding: "25px"
+              },
+            })}
             items={[
               {
                 name: 'Mission Rewards',
@@ -123,6 +143,12 @@ export const TokenomicsSection: React.FC = () => {
           flexWrap="wrap"
           alignItems="center"
           justifyContent="space-around"
+          px='25px'
+          css={css({
+            [theme.mediaQueries.md]: {
+              width: "unset"
+            },
+          })}
         >
           <Box maxWidth="630px">
             <Text color="primary.white" fontFamily="Roboto" lineHeight="28px">
